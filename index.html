@@ -38,7 +38,7 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
 @media(max-width:600px){.hero-image{width:min(94vw,430px) !important;border-radius:22px}.hero-image img{width:100% !important;height:auto !important;max-height:62svh !important;aspect-ratio:auto !important;object-fit:contain !important}.hero-image .halo{top:21.5% !important;width:24% !important}.cta{padding-right:50px !important}.cta::after{right:14px;font-size:19px}#bhajan-player{right:10px;bottom:10px;padding:7px}#bhajan-label{display:none}#bhajan-volume{width:60px}}
 </style>`;
     const musicScript=`
-<script>
+<scr`+`ipt>
 (function(){
   const src=new URL('${MUSIC}',location.href).href;
   const player=document.createElement('div');
@@ -50,9 +50,8 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
   const btn=document.getElementById('bhajan-toggle'), vol=document.getElementById('bhajan-volume');
   btn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play();btn.textContent='❚❚';btn.setAttribute('aria-label','भजन रोकें')}catch(e){console.error(e)}}else{audio.pause();btn.textContent='▶';btn.setAttribute('aria-label','भजन चलाएँ')}});
   vol.addEventListener('input',()=>audio.volume=Number(vol.value));
-  audio.addEventListener('ended',()=>{btn.textContent='▶'});
 })();
-</script>`;
+</scr`+`ipt>`;
     html=html.replace('</head>',responsiveImageCSS+'\n</head>');
     html=html.replace('</body>',musicScript+'\n</body>');
     document.open();
