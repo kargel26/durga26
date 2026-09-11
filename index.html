@@ -39,6 +39,19 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
   object-fit:contain !important;
   object-position:center !important;
 }
+/* Align the animated divine circle with Maa Durga's face */
+.hero-image .halo{
+  left:50% !important;
+  top:21.5% !important;
+  width:24% !important;
+  height:auto !important;
+  aspect-ratio:1 / 1 !important;
+  transform:translate(-50%,-50%) !important;
+}
+.hero-image .halo::before,
+.hero-image .halo::after{
+  pointer-events:none;
+}
 @media(max-width:600px){
   .hero-image{
     width:min(94vw,430px) !important;
@@ -50,6 +63,10 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
     max-height:62svh !important;
     aspect-ratio:auto !important;
     object-fit:contain !important;
+  }
+  .hero-image .halo{
+    top:21.5% !important;
+    width:24% !important;
   }
 }
 </style>`;
