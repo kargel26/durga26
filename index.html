@@ -52,6 +52,30 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
 .hero-image .halo::after{
   pointer-events:none;
 }
+/* Animated press/click indicator for the CTA button */
+.cta{
+  position:relative !important;
+  padding-right:52px !important;
+}
+.cta::after{
+  content:"👆";
+  position:absolute;
+  right:16px;
+  top:50%;
+  font-size:20px;
+  line-height:1;
+  transform:translateY(-45%);
+  transform-origin:center bottom;
+  animation:clickHand 1s ease-in-out infinite;
+  filter:drop-shadow(0 0 5px rgba(255,190,45,.55));
+  pointer-events:none;
+}
+@keyframes clickHand{
+  0%,100%{transform:translateY(-45%) scale(1) rotate(0deg);opacity:.9}
+  35%{transform:translateY(-45%) scale(1.18) rotate(-7deg);opacity:1}
+  55%{transform:translateY(-38%) scale(.94) rotate(5deg);opacity:1}
+  72%{transform:translateY(-45%) scale(1.08) rotate(-3deg);opacity:1}
+}
 @media(max-width:600px){
   .hero-image{
     width:min(94vw,430px) !important;
@@ -67,6 +91,13 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
   .hero-image .halo{
     top:21.5% !important;
     width:24% !important;
+  }
+  .cta{
+    padding-right:50px !important;
+  }
+  .cta::after{
+    right:14px;
+    font-size:19px;
   }
 }
 </style>`;
