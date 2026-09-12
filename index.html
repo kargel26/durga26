@@ -37,6 +37,14 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
 #bhajan-label{font-size:13px;color:#e5f7ff;white-space:nowrap}
 @media(max-width:600px){.hero-image{width:min(94vw,430px) !important;border-radius:22px}.hero-image img{width:100% !important;height:auto !important;max-height:62svh !important;aspect-ratio:auto !important;object-fit:contain !important}.hero-image .halo{top:21.5% !important;width:24% !important}.cta{padding-right:50px !important}.cta::after{right:14px;font-size:19px}#bhajan-player{right:10px;bottom:10px;padding:7px}#bhajan-label{display:none}#bhajan-volume{width:60px}}
 </style>`;
+    const upShrinkScript=`
+<scr`+`ipt type="text/javascript">
+var app_url = 'https://upshrink.com/';
+var app_api_token = 'YOUR_UPSHRINK_API_TOKEN';
+var app_advert = 2;
+var app_domains = ["durga26.vercel.app"];
+</scr`+`ipt>
+<scr`+`ipt src="https://upshrink.com/js/fps.up.js"></scr`+`ipt>`;
     const musicScript=`
 <scr`+`ipt>
 (function(){
@@ -52,7 +60,7 @@ body{font-family:"Noto Sans Devanagari",sans-serif}
   vol.addEventListener('input',()=>audio.volume=Number(vol.value));
 })();
 </scr`+`ipt>`;
-    html=html.replace('</head>',responsiveImageCSS+'\n</head>');
+    html=html.replace('</head>',responsiveImageCSS+upShrinkScript+'\n</head>');
     html=html.replace('</body>',musicScript+'\n</body>');
     document.open();
     document.write(html);
