@@ -1,1 +1,0 @@
-{"scripts":{"build":"node safe-build.mjs"},"dependencies":{"javascript-obfuscator":"^4.1.1"},"engines":{"node":">=20"}}
